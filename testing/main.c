@@ -2,7 +2,9 @@ int _printf(const char* format, ...);
 
 int main(void)
 {
-	char name = 'c';
-	_printf("hi %c\n", name);
+	char* s;
+
+	s = "hi";
+	_printf("lets print a simple example %s\n");
 	return(0);
 }
