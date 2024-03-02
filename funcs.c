@@ -12,9 +12,12 @@
  * Return: point
  */
 
-int print_char(int point, char* buffer, char a)
+int print_char(int point, char* buffer, va_list copy_args)
 {
-	buffer[point] = a;
+	char c;
+
+	c = va_arg(copy_args, int);
+	buffer[point] = 'a';
 	point++; 
 	return (point);
 }
@@ -28,10 +31,11 @@ int print_char(int point, char* buffer, char a)
  * Return: point
  */
 
-int print_str(int point, char* buffer, char* str)
+int print_str(int point, char* buffer, va_list copy_args)
 {
 	int i;
 
+	char* str = va_arg(copy_args, char*);
 	i = 0;
 	while (str[i] != '\0')
 	{
@@ -51,11 +55,12 @@ int print_str(int point, char* buffer, char* str)
  * Return: point (and FREE _iota())
  */
 
-int print_d(int point, char* buffer, int d)
+int print_d(int point, char* buffer, va_list copy_args)
 {
-	char* str;
-	int i;
-
+	char *str;
+	int i, d;
+	
+	d = va_arg(copy_args, int);
 	str = _itoa(d);
 	i = 0;
 	while (str[i] != '\0')

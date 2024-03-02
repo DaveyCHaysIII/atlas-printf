@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	va_list copy_args;
 	char op;
-	char *buffer[1024];
+	char buffer[1024];
 	int buffpoint, formatpoint;
 
 	va_start(args, format);
@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[formatpoint] != '%')
 		{
-			print_c(buffpoint, buffer, format[formatpoint])
+			buffer[buffpoint] = format[formatpoint];
 			formatpoint++;
 			buffpoint++;
 		}
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 		{
 			va_copy (args, copy_args);
 			op = (format[formatpoint + 1]);
-			buffpoint = get_op_func(&op)(buffpoint, buffer, copy_args);
+			buffpoint = get_op_func(op)(buffpoint, buffer, copy_args);
 			formatpoint = formatpoint + 2;
 		}
 	}

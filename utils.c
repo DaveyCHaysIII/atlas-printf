@@ -3,6 +3,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stddef.h>
+#include <unistd.h>
 
 /**
  * _strlen() - returns length of string
@@ -13,10 +14,10 @@
 
 int _strlen(char *str)
 {
-	int i, remainder;
+	int i;
 
 	i = 0;
-	while (str[i] != "\0")
+	while (str[i] != '\0')
 	{
 		i++;
 	}
