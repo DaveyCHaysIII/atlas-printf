@@ -38,7 +38,6 @@ int _printf(const char *format, ...)
 	}
 
 	buffer[buffpoint] = '\0';
-	buffer[buffpoint + 1] = '\n';
 	buffpoint = 0;
 	while (buffer[buffpoint] != '\0')
 	{
