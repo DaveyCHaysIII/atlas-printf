@@ -17,8 +17,8 @@ int print_char(int point, char* buffer, va_list copy_args)
 	char c;
 
 	c = va_arg(copy_args, int);
-	buffer[point] = 'a';
-	point++; 
+	buffer[point] = c;
+	point++;
 	return (point);
 }
 
