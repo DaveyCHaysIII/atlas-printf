@@ -12,7 +12,7 @@
  * Return: result of op
  */
 
-int (*get_op_func(op))(int buffpoint, char* buffer, va_list copy_args)
+int (*get_op_func(char op))(int buffpoint, char* buffer, va_list copy_args)
 {
 	op_t ops[] = {
 	{"c", print_char},

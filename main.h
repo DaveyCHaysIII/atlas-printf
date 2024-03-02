@@ -12,13 +12,13 @@ typedef struct op
 
 int _printf(const char *format, ...);
 
-int (*get_op_func(int c))(int, char*, va_list);
+int (*get_op_func(char c))(int, char*, va_list);
 int print_char(int point, char* buffer, va_list);
 int print_str(int point, char* buffer, va_list);
 int print_d(int point, char* buffer, va_list);
 
 int _strlen(char *str);
 char*  _itoa(int num);
-int _putchar(char c);
+int _putchar(char *c);
 
 #endif

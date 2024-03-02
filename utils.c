@@ -81,7 +81,7 @@ char* _itoa(int num)
  * Return: 0 on success
  */
 
-int _putchar(char a)
+int _putchar(char *a)
 {
 	write(1, a, 1);
 	return (0);

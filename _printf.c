@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 	buffpoint = 0;
 	while (buffer[buffpoint] != '\0')
 	{
-		_putchar(buffer[buffpoint]);
+		_putchar(&buffer[buffpoint]);
 		buffpoint++;
 	}
 	va_end(args);
