@@ -27,12 +27,50 @@ int _strlen(char *str)
  * _itoa() - converts integer to string
  * @num: the int in question
  *
- * Return: the string
+ * Return: the string (also you HAVE TO FREE)
  */
 
 char* _itoa(int num)
 {
+	char* str;
+	char temp;
+	int i, digit, start, end, is_neg;
 
+	str = malloc(sizeof(char) * 10);
+	i = 0;
+	is_neg = 0;
+	if (num < 0)
+	{
+		is_neg = 1;
+		num = -num;
+	}
+	if (num == 0)
+	{
+		str[i] = '0';
+		str[i + 1] = '\0';
+	}
+	while (num != 0)
+	{
+		digit = num % 10;
+		str[i++] = digit + '0';
+		num /= 10;
+	}
+	if (is_neg > 0)
+	{
+		str[i++] = '-';
+	}
+	str[i] = '\0';
+	start = 0;
+	end = i - 1;
+	while (start < end)
+	{
+		temp = str[end];
+		str[end] = str [start];
+		str[start] = temp;
+		start++;
+		end++;
+	}
+	return (str);
 }
 
 /**
