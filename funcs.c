@@ -74,6 +74,7 @@ int print_d(int point, char* buffer, va_list copy_args)
 
 int print_modulo(int point, char* buffer, va_list args)
 {
+	args;
 	buffer[point] = '%';
 	point++;	
 	return (point);
