@@ -30,11 +30,11 @@ int print_char(int point, char* buffer, va_list args)
  * Return: point
  */
 
-int print_str(int point, char* buffer, va_list copy_args)
+int print_str(int point, char* buffer, va_list args)
 {
 	int i;
 
-	char* str = va_arg(copy_args, char*);
+	char* str = va_arg(args, char*);
 	i = 0;
 	while (str[i] != '\0')
 	{
@@ -54,12 +54,12 @@ int print_str(int point, char* buffer, va_list copy_args)
  * Return: point (and FREE _iota())
  */
 
-int print_d(int point, char* buffer, va_list copy_args)
+int print_d(int point, char* buffer, va_list args)
 {
 	char *str;
 	int i, d;
 	
-	d = va_arg(copy_args, int);
+	d = va_arg(args, int);
 	str = _itoa(d);
 	i = 0;
 	while (str[i] != '\0')
@@ -72,7 +72,7 @@ int print_d(int point, char* buffer, va_list copy_args)
 	return (point);
 }
 
-int print_modulo(int point, char* buffer)
+int print_modulo(int point, char* buffer, va_list args)
 {
 	char a;
 
