@@ -14,7 +14,7 @@
 typedef struct op
 {
 	char *op;
-	int (*f)(int buffpoint, char *buffer, va_list copy_args);
+	int (*f)(int buffpoint, char *buffer, va_list args);
 } op_t;
 
 int _printf(const char *format, ...);
