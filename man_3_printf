@@ -1,0 +1,29 @@
+.\" Manpage for printf(3)
+.TH _printf  "March 2024" "GNU C Library Functions" "User Commands"
+
+.SH NAME
+_printf \- formatted output conversion
+
+.SH SYNOPSIS
+\fB#include <stdio.h>\fR
+.br
+\fBint _printf(const char *format, ...);\fR
+
+.SH DESCRIPTION
+\fBprintf()\fR writes the C string pointed by \fIformat\fR to the standard output (\fIstdout\fR). If \fIformat\fR includes format specifiers (subsequences beginning with \fB%\fR), the additional arguments following \fIformat\fR are formatted and inserted in the resulting string replacing their respective specifiers.
+
+.SH RETURN VALUE
+On success, the total number of characters written is returned.
+
+.SH EXAMPLES
+Here's an example usage of printf:
+
+.nf
+.RS
+printf("Hello, %s!\n", "world");
+.RE
+.fi
+
+.SH SEE ALSO
+fprintf(3), sprintf(3), snprintf(3)
+
