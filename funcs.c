@@ -60,7 +60,7 @@ int print_d(int point, char* buffer, va_list copy_args)
 	int i, d;
 	
 	d = va_arg(copy_args, int);
-	str = _alphaToint(d);
+	str = _itoa(d);
 	i = 0;
 	while (str[i] != '\0')
 	{

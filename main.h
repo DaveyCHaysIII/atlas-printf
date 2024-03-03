@@ -19,7 +19,7 @@ int print_d(int point, char* buffer, va_list);
 int print_37(void);
 
 int _strlen(char *str);
-char*  _alphaToint(int num);
+char* _itoa(int num);
 int _putchar(char *c);
 
 #endif

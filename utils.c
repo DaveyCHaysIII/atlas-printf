@@ -31,7 +31,7 @@ int _strlen(char *str)
  * Return: the string (also you HAVE TO FREE)
  */
 
-char* _alphaToint(int num)
+char* _itoa(int num)
 {
 	char* str;
 	char temp;

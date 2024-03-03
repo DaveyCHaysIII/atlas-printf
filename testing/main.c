@@ -6,6 +6,6 @@ int main(void)
 	char* s;
 
 	s = "hi";
-	_printf("%s, %c%c%c\n", s, 'a', 'b', 'c');
+	_printf("%c", 'S');
 	return(0);
 }
