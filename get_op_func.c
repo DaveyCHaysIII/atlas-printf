@@ -18,6 +18,8 @@ int (*get_op_func(char op))(int buffpoint, char* buffer, va_list copy_args)
 	{"c", print_char},
 	{"s", print_str},
 	{"d", print_d},
+	{"i", print_d},
+	{"%", print_modulo},
 	{NULL, NULL}
 	};
 	int i;

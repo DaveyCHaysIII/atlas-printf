@@ -60,7 +60,7 @@ int print_d(int point, char* buffer, va_list copy_args)
 	int i, d;
 	
 	d = va_arg(copy_args, int);
-	str = _alphaToint(d);
+	str = _itoa(d);
 	i = 0;
 	while (str[i] != '\0')
 	{
@@ -69,5 +69,12 @@ int print_d(int point, char* buffer, va_list copy_args)
 		point++;
 	}
 	free(str);
+	return (point);
+}
+
+int print_modulo(int point, char* buffer, va_list copy_args)
+{
+	buffer[point] = '%';
+	point++;	
 	return (point);
 }
