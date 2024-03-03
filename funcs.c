@@ -71,3 +71,10 @@ int print_d(int point, char* buffer, va_list copy_args)
 	free(str);
 	return (point);
 }
+
+int print_modulo(int point, char* buffer, va_list copy_args)
+{
+	buffer[point] = '%';
+	point++;	
+	return (point);
+}
