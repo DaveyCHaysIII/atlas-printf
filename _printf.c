@@ -43,5 +43,5 @@ int _printf(const char *format, ...)
 		buffpoint++;
 	}
 	va_end(args);
-	return (0);
+	return (_strlen(buffer));
 }
