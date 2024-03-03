@@ -6,8 +6,8 @@
 /**
  * print_char()- prints char to buffer
  * @point: current write pos of buffer
- * @ buffer: the buffer
- * @a: the char to write
+ * @buffer: the buffer
+ * @args: args
  *
  * Return: point
  */
@@ -25,22 +25,38 @@ int print_char(int point, char* buffer, va_list args)
  * print_str()- prints string to buffer
  * @point: current write pos of buffer
  * @buffer- the buffer
- * @str: the string to write
+ * @args: args
  *
  * Return: point
  */
 
-int print_str(int point, char* buffer, va_list copy_args)
+int print_str(int point, char* buffer, va_list args)
 {
 	int i;
+	char* str;
+	char* nullstr;
 
-	char* str = va_arg(copy_args, char*);
-	i = 0;
-	while (str[i] != '\0')
+	str = va_arg(args, char*);
+	if (str == NULL)
 	{
-		buffer[point] = str[i];
-		i++;
-		point++;
+		nullstr = "(null)";
+		i = 0; 
+		while (nullstr[i] != '\0')
+		{
+			buffer[point] = nullstr[i];
+			i++;
+			point++;
+		}
+	}
+	else
+	{
+		i = 0;
+		while (str[i] != '\0')
+		{
+			buffer[point] = str[i];
+			i++;
+			point++;
+		}
 	}
 	return (point);
 }
@@ -49,17 +65,17 @@ int print_str(int point, char* buffer, va_list copy_args)
  * print_d()- prints an int to buffer
  * @point- current write pos of buffer
  * @buffer- the buffer
- * @d: the int to write
+ * @args: args
  *
  * Return: point (and FREE _iota())
  */
 
-int print_d(int point, char* buffer, va_list copy_args)
+int print_d(int point, char* buffer, va_list args)
 {
 	char *str;
 	int i, d;
 	
-	d = va_arg(copy_args, int);
+	d = va_arg(args, int);
 	str = _itoa(d);
 	i = 0;
 	while (str[i] != '\0')
@@ -72,9 +88,18 @@ int print_d(int point, char* buffer, va_list copy_args)
 	return (point);
 }
 
-int print_modulo(int point, char* buffer)
+/**
+ * print_modulo()- prints a modulo character
+ * @point: current write pos of buffer
+ * @buffer: the buffer
+ * @args: args
+ *
+ * Return: point
+ */
+
+int print_modulo(int point, char* buffer, va_list args)
 {
-	char a;
+	int a;
 
 	a = va_arg(args, int);
 	a++;

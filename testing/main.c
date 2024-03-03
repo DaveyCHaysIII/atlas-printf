@@ -5,7 +5,6 @@ int main(void)
 {
 	int len;
 	int len2;
-	unsigned int ui;
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
 	_printf("Length:[%d, %i]\n", len, len);
@@ -19,5 +18,6 @@ int main(void)
 	printf("String:[%s]\n", "I am a string !");
 	_printf("double percent: %%\n");
 	printf("double percent: %%\n");
+	_printf("%s\n", (char*)0);
 	return (0);
 }
