@@ -31,7 +31,7 @@ int _strlen(char *str)
  * Return: the string (also you HAVE TO FREE)
  */
 
-char* _itoa(int num)
+char* _alphaToint(int num)
 {
 	char* str;
 	char temp;
@@ -69,7 +69,7 @@ char* _itoa(int num)
 		str[end] = str [start];
 		str[start] = temp;
 		start++;
-		end++;
+		end--;
 	}
 	return (str);
 }

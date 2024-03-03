@@ -10,7 +10,6 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	va_list copy_args;
 	char op;
 	char buffer[1024];
 	int buffpoint, formatpoint;
@@ -30,9 +29,8 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			va_copy (args, copy_args);
 			op = (format[formatpoint + 1]);
-			buffpoint = get_op_func(op)(buffpoint, buffer, copy_args);
+			buffpoint = get_op_func(op)(buffpoint, buffer, args);
 			formatpoint = formatpoint + 2;
 		}
 	}

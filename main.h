@@ -16,9 +16,10 @@ int (*get_op_func(char c))(int, char*, va_list);
 int print_char(int point, char* buffer, va_list);
 int print_str(int point, char* buffer, va_list);
 int print_d(int point, char* buffer, va_list);
+int print_37(void);
 
 int _strlen(char *str);
-char*  _itoa(int num);
+char*  _alphaToint(int num);
 int _putchar(char *c);
 
 #endif

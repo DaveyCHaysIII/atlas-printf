@@ -17,6 +17,7 @@ int (*get_op_func(char op))(int buffpoint, char* buffer, va_list copy_args)
 	op_t ops[] = {
 	{"c", print_char},
 	{"s", print_str},
+	{"d", print_d},
 	{NULL, NULL}
 	};
 	int i;

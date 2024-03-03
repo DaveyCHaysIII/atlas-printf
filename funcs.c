@@ -12,14 +12,13 @@
  * Return: point
  */
 
-int print_char(int point, char* buffer, va_list copy_args)
+int print_char(int point, char* buffer, va_list args)
 {
 	char c;
-
-	c = va_arg(copy_args, int);
-	buffer[point] = c;
+	c = va_arg(args, int);
+	buffer[point] = (char)c;
 	point++;
-	return (point);
+	return(point);
 }
 
 /**
@@ -61,7 +60,7 @@ int print_d(int point, char* buffer, va_list copy_args)
 	int i, d;
 	
 	d = va_arg(copy_args, int);
-	str = _itoa(d);
+	str = _alphaToint(d);
 	i = 0;
 	while (str[i] != '\0')
 	{
