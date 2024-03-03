@@ -12,35 +12,36 @@
  * Return: point
  */
 
-int print_char(int point, char* buffer, va_list args)
+int print_char(int point, char *buffer, va_list args)
 {
 	char c;
+
 	c = va_arg(args, int);
-	buffer[point] = (char)c;
+	buffer[point] = (char) c;
 	point++;
-	return(point);
+	return (point);
 }
 
 /**
  * print_str()- prints string to buffer
  * @point: current write pos of buffer
- * @buffer- the buffer
+ * @buffer: the buffer
  * @args: args
  *
  * Return: point
  */
 
-int print_str(int point, char* buffer, va_list args)
+int print_str(int point, char *buffer, va_list args)
 {
 	int i;
-	char* str;
-	char* nullstr;
+	char *str;
+	char *nullstr;
 
 	str = va_arg(args, char*);
 	if (str == NULL)
 	{
 		nullstr = "(null)";
-		i = 0; 
+		i = 0;
 		while (nullstr[i] != '\0')
 		{
 			buffer[point] = nullstr[i];
@@ -63,18 +64,18 @@ int print_str(int point, char* buffer, va_list args)
 
 /**
  * print_d()- prints an int to buffer
- * @point- current write pos of buffer
- * @buffer- the buffer
+ * @point: current write pos of buffer
+ * @buffer: the buffer
  * @args: args
  *
  * Return: point (and FREE _iota())
  */
 
-int print_d(int point, char* buffer, va_list args)
+int print_d(int point, char *buffer, va_list args)
 {
 	char *str;
 	int i, d;
-	
+
 	d = va_arg(args, int);
 	str = _itoa(d);
 	i = 0;
@@ -97,7 +98,7 @@ int print_d(int point, char* buffer, va_list args)
  * Return: point
  */
 
-int print_modulo(int point, char* buffer, va_list args)
+int print_modulo(int point, char *buffer, va_list args)
 {
 	int a;
 

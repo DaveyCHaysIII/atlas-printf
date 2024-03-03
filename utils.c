@@ -6,7 +6,7 @@
 #include <unistd.h>
 
 /**
- * _strlen() - returns length of string
+ * _strlen()- returns length of string
  * @str: the string in question
  *
  * Return: length
@@ -25,15 +25,15 @@ int _strlen(char *str)
 }
 
 /**
- * _itoa() - converts integer to string
+ * _itoa()- converts integer to string
  * @num: the int in question
  *
  * Return: the string (also you HAVE TO FREE)
  */
 
-char* _itoa(int num)
+char *_itoa(int num)
 {
-	char* str;
+	char *str;
 	char temp;
 	int i, digit, start, end, is_neg;
 
@@ -66,7 +66,7 @@ char* _itoa(int num)
 	while (start < end)
 	{
 		temp = str[end];
-		str[end] = str [start];
+		str[end] = str[start];
 		str[start] = temp;
 		start++;
 		end--;
