@@ -12,6 +12,20 @@ _printf \- formatted output conversion
 .SH DESCRIPTION
 \fBprintf()\fR writes the C string pointed by \fIformat\fR to the standard output (\fIstdout\fR). If \fIformat\fR includes format specifiers (subsequences beginning with \fB%\fR), the additional arguments following \fIformat\fR are formatted and inserted in the resulting string replacing their respective specifiers.
 
+.SH OPTIONS
+.TP
+.B \%c
+used to print a character
+.TP
+.B \%s
+used to print a string
+.TP
+.B \%d
+used to print an integer
+.TP
+.B \%i
+used to print an integer
+
 .SH RETURN VALUE
 On success, the total number of characters written is returned.
 
@@ -26,4 +40,7 @@ printf("Hello, %s!\n", "world");
 
 .SH SEE ALSO
 fprintf(3), sprintf(3), snprintf(3)
+
+.SH AUTHOR
+Davey & Trey
 
